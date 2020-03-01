@@ -246,9 +246,9 @@ function myFunction() {
 
             <h2>Social</h2>
             <table>
-              <?php if($linkedin!=""){?><tr><td><i class="fa fa-linkedin"></i></td><td>LinkedIn<td><td><?php echo $linkedin;?></td></tr>
-						<?php }if($github!=""){?><tr><td><i class="fa fa-github"></i></td><td><?php echo $github;?></td></tr>
-					<?php } if($website!=""){?><tr><td><i class="fa fa-globe"></i></td><td>Website</td><td><?php echo $website;?></td></tr>
+	            <?php if($linkedin!=""){?><tr><td><i class="fa fa-linkedin"></i></td><td><a href="<?php echo $linkedin;?>" target="_blank"><?php echo $linkedin;?></a></td></tr>
+							<?php }if($github!=""){?><tr><td><i class="fa fa-github"></i></td><td><a href="<?php echo $github;?>" target="_blank"><?php echo $github;?></a></td></tr>
+							<?php } if($website!=""){?><tr><td><i class="fa fa-globe"></i></td><td><a href="<?php echo $website;?>" target="_blank"><?php echo $website;?></a></td></tr>
 							<?php } ?>
 						</table>
 
@@ -347,7 +347,7 @@ function myFunction() {
 									 	echo "<li>";
 									 	echo "<a class='title'><h3>".$inttitle[$i]."</h3></a>";
 									 	echo "<p class='desc' style='display:none;font-size:20px;'>".$intdesc[$i]."</p>";
-										echo "<p>".$intcerti[$i]."</p>";
+										echo '<label>Certificate:</label><a  href="download_certi.php?Int_Certificate='.$intcerti[$i].'"  target="_blank"><i class="fa fa-file"></i></a>';
 										echo "</li>";
 									  }
 											echo "</ul>";
