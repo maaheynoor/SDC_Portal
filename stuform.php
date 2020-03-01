@@ -246,7 +246,7 @@ function myFunction() {
     <button class="toggle-btn" onclick="upload()"><i class="fa fa-picture-o" style="font-size:36px"> Change Profile Image</i></button><br><br>
        <img src="image\<?php if($profile){echo $profile;}else{echo 'placeholder.png';}?>" onclick="upload()" id="stu_profile_image" title="Click to change profile picture">
        <input type="file" name="upload_image" id="upload_image" accept="image/*" style="display:none">
-    
+
   <div>
     <button class="toggle-btn"><i class="fa fa-lock" style="font-size:36px"> Change Password</i></button>
     <form class="form" method="post" action="stusubmit.php">
@@ -326,6 +326,7 @@ function myFunction() {
         <div class="uploaded">
           <label>Certificate:</label><a href="download_certi.php?Int_Certificate=<?php echo $intcerti[0]; ?>" target="_blank"><?php echo $intcerti[0]; ?></a>
         </div>
+
         <button name="edit" class="edit" type="button"><i class="fa fa-pencil"></i></button>
         <div class="uploader"  style="display:none">
           <label>Upload Certificate:</label><input type="file" name="intcerti[]"><br><br>
@@ -400,7 +401,8 @@ function myFunction() {
   }
   for($i=1;$i<count($inttitle);$i++)
   {
-    echo	'<script>$("#internship_repeat").append(\'<div class="internship_div"><label>Title:</label><input type="text" placeholder="Title" name="inttitle[]" value="'.$inttitle[$i].'"><br><br><textarea rows=5 cols=100 placeholder="Description" name="intdesc[]">'.$intdesc[$i].'</textarea><br><br><div class="uploaded"><label>Certificate:</label><p>'.$intcerti[$i].'</p></div><button name="edit" class="edit" type="button"><i class="fa fa-pencil"></i></button><div class="uploader"  style="display:none"><label>Upload Certificate:</label><input type="file" name="intcerti[]"><br><br></div><br><br><input type="button" value="Remove" class="internship_remove btn btn-danger btn-lg"/><br><br></div>\');</script>';
+    echo	'<script>$("#internship_repeat").append(\'<div class="internship_div"><label>Title:</label><input type="text" placeholder="Title" name="inttitle[]" value="'.$inttitle[$i].'"><br><br><textarea rows=5 cols=100 placeholder="Description" name="intdesc[]">'.$intdesc[$i].'</textarea><br><br><div class="uploaded"><label>Certificate:</label><a  href="download_certi.php?Int_Certificate='.$intcerti[$i].'"  target="_blank">'.$intcerti[$i].'</a></div><button name="edit" class="edit" type="button"><i class="fa fa-pencil"></i></button><div class="uploader"  style="display:none"><label>Upload Certificate:</label><input type="file" name="intcerti[]"><br><br></div><br><br><input type="button" value="Remove" class="internship_remove btn btn-danger btn-lg"/><br><br></div>\');</script>';
+// <a href="download_certi.php?Int_Certificate=$intcerti[0]" target="_blank"><?php echo $intcerti[0];</a>
   }
   ?>
 
