@@ -162,7 +162,7 @@
 					  </a>
 				 </div>
 
-                <!--<div class="col-lg-6 mb-4">
+                <!-- <div class="col-lg-6 mb-4">
                   <h1  data-aos="fade-up" data-aos-delay="100">Learn From The Expert</h1>
                   <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
                   <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary py-3 px-5 btn-pill">Admission Now</a></p>
@@ -183,15 +183,14 @@
                       <input type="submit" class="btn btn-primary btn-pill" value="Sign up">
                     </div>
                   </form>
-                </div-->
-				</div>
-              <!--</div>-->
-            </div>
-
+                </div> -->
+								</div>
+          </div>
+          </div>
           </div>
         </div>
       </div>
-    </div>
+    <!--
 
 
     <div class="site-section courses-title" id="courses-section">
@@ -394,7 +393,9 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
+
+		<!-- Three Person-->
 
     <div class="site-section" id="teachers-section">
       <div class="container">
@@ -402,7 +403,7 @@
         <div class="row mb-5 justify-content-center">
           <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
             <h2 class="section-title">Our Teachers</h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repellat aut neque! Doloribus sunt non aut reiciendis, vel recusandae obcaecati hic dicta repudiandae in quas quibusdam ullam, illum sed veniam!</p>
+            <!-- <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repellat aut neque! Doloribus sunt non aut reiciendis, vel recusandae obcaecati hic dicta repudiandae in quas quibusdam ullam, illum sed veniam!</p> -->
           </div>
         </div>
 
@@ -410,55 +411,72 @@
 
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="teacher text-center">
-              <img src="images/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <img src="images/p1.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
-                <h3 class="text-black">Benjamin Stone</h3>
-                <p class="position">Physics Teacher</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
+                <h3 class="text-black">MR. SAMIR SOMAIYA</h3>
+                <p class="position">PRESIDENT</p>
+                <p>"We want that education by which character is formed, strength of mind is increased, the intellect expanded, and by which one can stand on one's own feet.
+								</p><p>We need to grow, to build up our human society in a just way. Thus, development should reach to all sectors.
+									</p><p>Our dream is to build a world-class research and teaching institution, that is global in the reach of its ideas, and universal in its service."</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="teacher text-center">
-              <img src="images/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <img src="images/p2.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
-                <h3 class="text-black">Katleen Stone</h3>
-                <p class="position">Physics Teacher</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
+                <h3 class="text-black">LT. GEN. JAGBIR SINGH</h3>
+                <p class="position">SECRETARY</p>
+                <p>"Engineering Discipline seeks to apply the basic principles of science for evolving technologies for Human Development and for the conservation of the environment.
+								</p><p>	KJSCE strives to provide to the students the state of art engineering education on a strong foundation of values. The Institute endeavors to provide an ecosystem which nurtures innovation and creativity and fosters interdisciplinary studies."</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="teacher text-center">
-              <img src="images/person_3.jpg" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <img src="images/p3.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
-                <h3 class="text-black">Sadie White</h3>
-                <p class="position">Physics Teacher</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
+                <h3 class="text-black">DR. SHUBHA PANDIT</h3>
+                <p class="position">PRINCIPAL</p>
+                <p>"Understanding the fact that lessons in engineering cannot be confined to only classroom teaching, education in our College has always tried to reach beyond the curriculum. Not only our students are supported to participate in technology-driven projects at national as well as international level to achieve a global outlook, entrepreneurial approach through innovative ideas is given a lot of encouragement."</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+		<!-- <div class="site-section bg-image overlay" style="background-image: url('images/hero_1.jpg');">
+			<div class="container">
+				<div class="row justify-content-center align-items-center">
+					<div class="col-md-8 text-center testimony">
+						<img src="images/person_4.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+						<h3 class="mb-4">Jerome Jensen</h3>
+						<blockquote>
+							<p>&ldquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum rem soluta sit eius necessitatibus voluptate excepturi beatae ad eveniet sapiente impedit quae modi quo provident odit molestias! Rem reprehenderit assumenda &rdquo;</p>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div> -->
 
     <div class="site-section bg-image overlay" style="background-image: url('images/hero_1.jpg');">
       <div class="container">
+
         <div class="row justify-content-center align-items-center">
           <div class="col-md-8 text-center testimony">
-            <img src="images/person_4.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
-            <h3 class="mb-4">Jerome Jensen</h3>
-            <blockquote>
-              <p>&ldquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum rem soluta sit eius necessitatibus voluptate excepturi beatae ad eveniet sapiente impedit quae modi quo provident odit molestias! Rem reprehenderit assumenda &rdquo;</p>
-            </blockquote>
+						<h2 class="mb-4">Project Done Under</h2>
+            <img src="images/babaso-sir-image.png" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+            <h3 class="mb-4">Mr. Babaso Damodar Aldar</h3>
+						<p class="position">Assistant Professor</p>
+            <p>Prof. Babaso Aldar is working as an Assistant Professor in the Department of Computer Engineering, K J Somaiya College of Engineering. </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="site-section pb-0">
+    <!-- <div class="site-section pb-0">
 
       <div class="future-blobs">
         <div class="blob_2">
@@ -519,7 +537,7 @@
         </div>
       </div>
     </div>
-
+ -->
 
 
 
@@ -533,7 +551,7 @@
 
 
             <h2 class="section-title mb-3">Message Us</h2>
-            <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+            <!-- <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p> -->
 
             <form method="post" data-aos="fade">
               <div class="form-group row">
@@ -580,7 +598,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h3>About OneSchool</h3>
+            <h3>About Software Development Cell</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro consectetur ut hic ipsum et veritatis corrupti. Itaque eius soluta optio dolorum temporibus in, atque, quos fugit sunt sit quaerat dicta.</p>
           </div>
 
@@ -612,7 +630,7 @@
             <div class="border-top pt-5">
             <p>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> KJSCE SDC & LMS, All Rights Reserved. Developed by <a href="" target="_blank" >KJSCE SDC(Software Development Cell)</a>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
       </p>
             </div>
