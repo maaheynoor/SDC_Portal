@@ -8,14 +8,14 @@
 	{
 		$sql="SELECT * FROM `corousal`";
 		$result = $con->query($sql);
-		if ($result->num_rows > 0) 
+		if ($result->num_rows > 0)
 		{
 			$image_arr=[];
 			while($row = $result->fetch_assoc()) {
 				 array_push($image_arr,$row['Image']);
 			}
 		}
-			
+
 	}
  ?>
 <html>
@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  
+
   <style>
  body {
   margin: 0;
@@ -87,7 +87,7 @@
     height:100%;
   }
 body{
-    background-color:white;
+background-color:#960090;
 	background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -95,7 +95,7 @@ body{
 	background-attachment:fixed;
   }
   .container{
-    background:#e6fff2;
+background-color:white;
     width:90%;
     left:5%;
     top:15%;
@@ -169,12 +169,33 @@ body{
 		border:1px solid black;
 		margin:30px;
 	}
+
+	icon {
+	  background-color: Black;
+	  border: none;
+	  border-radius:100%;
+	  margin:3px;
+	  float:right;
+	  color: white;
+	  padding: 8px 8px;
+	  font-size: 20px;
+	  cursor: pointer;
+	}
+
+	/* Darker background on mouse-over */
+	/*delete icon*/
+	.d:hover {
+	  background-color:#ff1a1a;
+	}
+	/*edit icon*/
+	.e:hover {
+	  background-color:#2eb82e;
+	}
   </style>
 </head>
 <body>
 <div class="topnav" id="myTopnav">
   <a href="index.php" class="active"><i class="fa fa-home"></i> Home</a>
-  <a href="#"><i class="fa fa-list"></i> About</a>
   <a href="../displayintp.php"><i class="fa fa-black-tie"></i> Internship</a>
   <?php
     			if(isset($_SESSION['email']))
@@ -209,20 +230,29 @@ function myFunction() {
   }
 }
 </script>
+<div class="container">
+	<div class="card-panel hoverable">
 	<div>
-		
 			<?php
 				$sql="SELECT * FROM `corousal`";
 				$result = $con->query($sql);
 				if ($result->num_rows > 0) {
 					$i=0;
 					while($row = $result->fetch_assoc()) {
-						echo '<form action="homeform.php" method="post"><div class="display_img_div"><img src="images/slider/'.$row['Image'].'" width=400px height=250px alt="Image not found"><input type="file" name="img" value="'.$row['Image'].'"><label>title</label><input type="text" value="'.$row['Title'].'" name="title" class="title"><label>description</label><input type="text" name="desc" value="'.$row['Description'].'"><input type="submit" name="Edit" value="Edit"><input type="submit" name="delete" value="delete"></div></form>';
+						echo '<form action="homeform.php" method="post"><div class="display_img_div"><img src="images/slider/'.$row['Image'].'" width=400px height=250px alt="Image not found">
+						<input type="file" name="img" value="'.$row['Image'].'">
+						<label>title</label>
+						<input type="text" value="'.$row['Title'].'" name="title" class="title">
+						<br>
+						<label>description</label>
+						<input type="text" name="desc" value="'.$row['Description'].'">
+						<button type="submit" name="Edit" value="Edit" class="icon" disabled><i class="fa fa-pencil e"></i></button>
+						<button type="submit" name="delete" value="Delete" class="icon"><i class="fa fa-trash d"></i></button></div></form>';
 					}
 				}
 			?>
 			<!---<input type="submit" name="edit" value="Edit"><br>-->
-		
+
 		<button class="toggle-btn"><i class="fa fa-picture-o" style="font-size:36px">Add Image for Carousel</i></button>
 		<form class="form" method="post" action="homeform.php" enctype="multipart/form-data">
 			<div id="img_repeat">
@@ -267,21 +297,21 @@ function myFunction() {
 			$file_name_array=$_FILES['img']['name'];
 			$file_tmp_array=$_FILES['img']['tmp_name'];
 			for($i=0;$i<count($file_tmp_array);$i++)
-			{ 
+			{
 			  $file_name_array[$i] = time().'_'.$file_name_array[$i];
 			  $target='images/slider/'.$file_name_array[$i];
 			  if(move_uploaded_file($file_tmp_array[$i],$target)){
-				$query="INSERT INTO corousal VALUES ('$file_name_array[$i]','$title[$i]','$desc[$i]')"; 
+				$query="INSERT INTO corousal VALUES ('$file_name_array[$i]','$title[$i]','$desc[$i]')";
 				$result=mysqli_query($con,$query);
 			  }
 			}
 			echo "<script type='text/javascript'>alert('Images uploaded')</script>";
 
 		}
-		
+
 	  }
 	?>
-	
+
 	<?php
 		if(isset($_POST["delete"]))
 		{
@@ -306,8 +336,8 @@ function myFunction() {
 					}
 				}
 				//header('location:refresh.php');
-				
-				/*while ($file = readdir($dirHandle)) 
+
+				/*while ($file = readdir($dirHandle))
 				{
 					if($file==$data) {
 						unlink($dir.'/'.$file);
@@ -333,6 +363,7 @@ function myFunction() {
 			}
 		}
 	?>
-	
+</div>
+</div>
 </body>
 </html>
