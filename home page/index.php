@@ -116,12 +116,13 @@
               <!--<div class="row align-items-center">-->
 			  <div class="slider">
 
-				<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-				  <ol class="carousel-indicators">
+
 				  <?php
+
 					$sql="SELECT * FROM `corousal`";
 					$result = $con->query($sql);
 					if ($result->num_rows > 0) {
+						echo '<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel"><ol class="carousel-indicators">';
 						for($i=0;$i<$result->num_rows;$i++)
 						{
 							if($i==0){
@@ -131,11 +132,11 @@
 								echo '<li data-target="#carouselExampleIndicators" data-slide-to="'.$i.'"></li>';
 							}
 						}
-					} else {
-						echo "0 results";
+						echo '</ol>';
 					}
+
 				  ?>
-				  </ol>
+
 				  <div class="carousel-inner">
 					<?php
 						if ($result->num_rows > 0) {
@@ -152,16 +153,20 @@
 						}
 					?>
 				  </div>
-					  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<?php
+					if ($result->num_rows)
+					{
+					  echo '<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
 					  </a>
 					  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="sr-only">Next</span>
-					  </a>
-				 </div>
+					  </a>';
 
+				 echo '</div>';
+			 }?>
                 <!-- <div class="col-lg-6 mb-4">
                   <h1  data-aos="fade-up" data-aos-delay="100">Learn From The Expert</h1>
                   <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
@@ -402,7 +407,7 @@
 
         <div class="row mb-5 justify-content-center">
           <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
-            <h2 class="section-title">Our Teachers</h2>
+            <!-- <h2 class="section-title">Our Teachers</h2> -->
             <!-- <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repellat aut neque! Doloribus sunt non aut reiciendis, vel recusandae obcaecati hic dicta repudiandae in quas quibusdam ullam, illum sed veniam!</p> -->
           </div>
         </div>
@@ -597,12 +602,12 @@
     <footer class="footer-section bg-white">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h3>About Software Development Cell</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro consectetur ut hic ipsum et veritatis corrupti. Itaque eius soluta optio dolorum temporibus in, atque, quos fugit sunt sit quaerat dicta.</p>
+            <p>A portal for the Software Development Cell (SDC) of K.J. Somaiya College of Engineering. The SDC provides various software related internships to students on the ongoing projects so as to give the students an opportunity to learn something different and also give hands on experience to the students about what they are being taught.</p>
           </div>
 
-          <div class="col-md-3 ml-auto">
+          <!-- <div class="col-md-3 ml-auto">
             <h3>Links</h3>
             <ul class="list-unstyled footer-links">
               <li><a href="#">Home</a></li>
@@ -610,11 +615,11 @@
               <li><a href="#">Programs</a></li>
               <li><a href="#">Teachers</a></li>
             </ul>
-          </div>
+          </div> -->
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <h3>Subscribe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt iure iusto architecto? Numquam, natus?</p>
+            <p>Subscribe to Software Development Cell to receive mails regarding new projects and internships.</p>
             <form action="#" class="footer-subscribe">
               <div class="d-flex mb-5">
                 <input type="text" class="form-control rounded-0" placeholder="Email">
