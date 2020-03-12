@@ -1,0 +1,2 @@
+This folder containes profile pictures of all users(faculty and student).
+Has one placeholder for no profile picture
