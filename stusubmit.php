@@ -125,15 +125,19 @@
         echo "<script type='text/javascript'>alert('Incorrect password')</script>";
       }
     }
-    $result=mysqli_query($con,$query);
-    if($result)
+    if(isset($query))
     {
-      echo "<script type='text/javascript'>alert('Profile Updated successfully')</script>";
+      $result=mysqli_query($con,$query);
+      if($result)
+      {
+        echo "<script type='text/javascript'>alert('Profile Updated successfully')</script>";
+      }
+      else
+      {
+        echo "<script type='text/javascript'>alert('Profile Updation failed ')</script>";
+      }
     }
-    else
-    {
-      echo "<script type='text/javascript'>alert('Profile Updation failed ')</script>";
-    }
+
   }
-header("location:stuform.php");
+  header("location:stuform.php");
 ?>

@@ -191,7 +191,6 @@ img{
 <body>
 <div class="topnav" id="myTopnav">
   <a href="home page/index.php" class="active"><i class="fa fa-home"></i> Home</a>
-  <a href="#"><i class="fa fa-list"></i> About</a>
   <a href="displayintp.php"><i class="fa fa-black-tie"></i> Internship</a>
   <?php
     			if(isset($_SESSION['email']))

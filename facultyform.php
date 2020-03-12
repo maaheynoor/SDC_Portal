@@ -225,7 +225,6 @@ if(isset($_SESSION['email']))
 <body>
 <div class="topnav" id="myTopnav">
   <a href="home page/index.php" class="active"><i class="fa fa-home"></i> Home</a>
-  <a href="#"><i class="fa fa-list"></i> About</a>
   <a href="displayintp.php"><i class="fa fa-black-tie"></i> Internship</a>
   <?php
     			if(isset($_SESSION['email']))
@@ -261,13 +260,9 @@ function myFunction() {
 }
 </script>
 <div class="contain">
-  <div class="panel panel-info">
-    <div class="panel-heading">Select Profile Image</div>
-    <div class="panel-body" align="left">
+    <button class="toggle-btn" onclick="upload()"><i class="fa fa-picture-o" style="font-size:36px"> Change Profile Image</i></button><br><br>
      <img src="image\<?php if($profile){echo $profile;}else{echo 'placeholder.png';}?>" onclick="upload()" id="stu_profile_image" title="Click to change profile picture">
      <input type="file" name="upload_image" id="upload_image" accept="image/*" style="display:none">
-    </div>
-   </div>
 <div>
   <button class="toggle-btn"><i class="fa fa-lock" style="font-size:36px"></i> Change Password</button>
   <form class="form" method="post" action="facsubmit.php">

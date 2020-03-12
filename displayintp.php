@@ -29,6 +29,7 @@
 	<title>Display Internships</title>
 
 	<style>
+	/*navbar styling*/
 	html{
 	  height:100%;
 	}
@@ -97,7 +98,8 @@
 	   text-align: left;
 	 }
 	}
-
+/*navbar styling*/
+/*split screen in two parts*/
 	 .row{
 	   min-height:100%;
 	 }
@@ -113,7 +115,7 @@
 	   padding:10px;
 
 	 }
-
+/* buttons for years*/
 	.bttn {
 	  background-image: linear-gradient(to right,#2c5887, #13263a,#13263a, #2c5887);
 	  color: white;
@@ -140,6 +142,7 @@
 		color:#9fbee0;
 	}
 
+	/*links for profiles and internship names*/
 	a{
 	  color:#e6f8ff;
 	  text-decoration:none;
@@ -150,6 +153,7 @@
 	  text-decoration:none;
 	}
 
+	/*Each internship in one p tag */
 	p{
 	border:none;
 	border-radius: 25px;
@@ -163,6 +167,7 @@ p:hover{
 	background: #014055;
 	transition: background 0.75s ease;
 }
+/*id for year title p tag*/
 	#year_title{
 	  background: #0083b3;
 		color:#80ddff;
@@ -170,6 +175,7 @@ p:hover{
 	  border:none;
 	}
 
+/* icons for delete and edit (admin mode)*/
 	.icon {
 	  background-color: Black;
 	  border: none;
@@ -183,9 +189,11 @@ p:hover{
 	}
 
 	/* Darker background on mouse-over */
+	/*delete icon*/
 	.d:hover {
 	  background-color:#ff1a1a;
 	}
+	/*edit icon*/
 	.e:hover {
 	  background-color:#2eb82e;
 	}
@@ -209,6 +217,7 @@ p:hover{
 	margin-bottom: 10px;
 	border-radius: 10px;
 }
+/*form labels*/
 	label
   {
 	  color:white;
@@ -217,7 +226,7 @@ p:hover{
 	  font-size:20px;
 
   }
-
+/*form inputs*/
 	input,textarea {
   background-color: transparent;
   border: none;
@@ -243,7 +252,6 @@ textarea:focus{
 	<!-- navbar-->
 	<div class="topnav" id="myTopnav">
 	  <a href="home page/index.php" class="active"><i class="fa fa-home"></i> Home</a>
-	  <a href="#"><i class="fa fa-list"></i> About</a>
 	  <a href="displayintp.php"><i class="fa fa-black-tie"></i> Internship</a>
 	  <?php
 	    			if(isset($_SESSION['email']))
@@ -282,7 +290,7 @@ textarea:focus{
 	  }
 	}
 	</script>
-
+<!--Navbar end -->
 	<!--Display Add internship,delete,edit buttons only when logged in-->
 	<?php
 	if(isset($_SESSION['email']))
@@ -447,41 +455,23 @@ textarea:focus{
 			$(this).parent('div.student_div').remove();
 		});
 	</script>
-
 	<!--Internship details and Edit delete buttons in form-->
 <div id='display'>
-
 	<form method='post'>
-
 		<?php
-
 		if(isset($_POST['year']))
-
 		{
-
 			//pagination
-
 			$results_per_page=10;
 			$page='';
-
 			echo "<p id='year_title'>".$_POST['year']."</p>";
-
 			//$sql= "SELECT `Internship Name`,`Faculty Name`,`Student Name`,`Start Date`,`Description` from internshiptable ORDER BY `Start Date` DESC  ";
-
-
-
 			if(!isset($_GET['page']))
-
 			{
-
 				$page=1;
-
 			}else{
-
 				$page=$_GET['page'];
-
 			}
-
 			$this_page_first_result=($page-1)*$results_per_page;
 			$y=$_POST['year'];
 			if($y!='All')
@@ -491,99 +481,53 @@ textarea:focus{
 			else {
 				$sql= "SELECT * from internshiptable ORDER BY `Start Date` DESC LIMIT $this_page_first_result, $results_per_page";
 			}
-
 			$result=$con->query($sql);
-
 			$number_of_results=mysqli_num_rows($result);
-
 			$number_of_pages=ceil($number_of_results/$results_per_page);
-
 			if($result->num_rows > 0)
-
 			{
-
 				while($row = $result->fetch_assoc())
-
 				{
-
 					$date=DateTime::createFromFormat("Y-m-d", $row['Start Date']);
-
 					$year=$date->format("Y");
-
 					//script to check element exists else create
-
 					if($_POST['year']=="All" || $year==$_POST['year'])
-
 						{
-
 							//Internship name and description
-
 							echo "<p>Internship Name: <a class='intp'>".$row["Internship Name"]."</a><br class='desc' style='display:none;'><span class='desc' style='display:none;'>".$row["Description"]."</span><br>Faculty In-charge: ";
-
 							//Faculty Name
-
 							$fname_arr = explode (", ", $row["Faculty Name"]);
 							$femail_arr = explode (", ", $row["Faculty Email"]);
-
 							for($i=0;$i<count($fname_arr);$i++)
-
 							{
-
 								if($i!=0){
-
 									echo ', ';
-
 								}
-
 								echo "<a href='facultyprofile.php?email=".$femail_arr[$i]."'>".$fname_arr[$i]."</a>";
-
 							}
-
 							//Student Name
-
 							echo "<br>Students: ";
-
 							$sname_arr = explode (", ", $row["Student Name"]);
 							$semail_arr = explode (", ", $row["Student Email"]);
-
 							for($i=0;$i<count($sname_arr);$i++)
-
 							{
-
 								if($i!=0){
-
 									echo ', ';
-
 								}
-
 								echo "<a href='studentprofile.php?email=".$semail_arr[$i]."'>".$sname_arr[$i]."</a>";
-
 							}
-
 							//Edit and Delete buttons
-
 							echo "<button type='submit' style='display:none' onClick=\"javascript: return confirm('Please confirm deletion');\" name='delete' value='".$row["Internship Name"]."'class=\"icon d\"><i class=\"fa fa-trash\"></i></button>
-
 						<button type='submit' style='display:none' name='edit' value='".$row["Internship Name"]."'class=\"icon e\"><i class=\"fa fa-pencil\"></i></button></p>";}
-
 				}
-
 			}
-
 			for($page=1;$page<=$number_of_pages;$page++)
-
 			{
-
 				echo'<a href="#display?page='.$page.'">'.$page.'</a>';
-
 			}
-
 		}
-
 		?>
-
 	</form>
-
 	</div>
 	</div>
 </div>
@@ -611,8 +555,6 @@ for($j=1;$j<count($sname_arr);$j++)
 }
 }
 ?>
-
 <?php include 'update.php';?>
-
 </body>
 </html>
